@@ -1,0 +1,16 @@
+@model sampleweb.Models.Category
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr>
+<form method="post">
+    <p>
+        <label asp-for="Name">Your Name:</label>
+        <input asp-for="Name" />
+    </p>
+
+    <p><button type="submit">Submit</button></p>
+
+</form>

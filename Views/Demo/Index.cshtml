@@ -1,0 +1,27 @@
+@model IEnumerable<sampleweb.Models.Category>
+@{
+    ViewData["Title"] = "List of Categories";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<a href=@Url.ActionLink("Create", "Demo")>Create a Category</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>
+            <a asp-action="edit" asp-route-id="@item.Id">update</a> 
+            <a asp-action="delete" asp-route-id="@item.Id">Delete</a> 
+        </td>
+    </tr>
+}
+</table>
