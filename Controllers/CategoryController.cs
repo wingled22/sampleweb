@@ -45,25 +45,30 @@ namespace sampleweb.Controllers
             
         }
 
-         public IActionResult Update(int id){
-            var cat = _context.Categories.Where(q => q.Id == id).FirstOrDefault();
-            return View(cat);
-
+        public IActionResult Edit(int id){
+            var category = _context.Categories.Where(q => q.Id == id).FirstOrDefault();
+            return View(category);
         }
 
         [HttpPost]
-        public IActionResult Update( Category cat){
+        public IActionResult Edit(Category category){
             
             if(ModelState.IsValid){
-               
-                _context.Categories.Update(cat);
+                _context.Categories.Update(category);
                 _context.SaveChanges();
-               
                 return RedirectToAction("Index");
             }
-            return View(cat);
-
-
+            return View(category);
         }
+
+        public IActionResult Delete(int id){
+            var catToBeDeleted = _context.Categories.Where(q => q.Id == id).FirstOrDefault();
+
+            _context.Categories.Remove(catToBeDeleted);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

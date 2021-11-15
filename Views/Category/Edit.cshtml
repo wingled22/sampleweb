@@ -1,0 +1,21 @@
+@model sampleweb.Models.Category
+
+@{
+    ViewData["Title"] = "Update Category";
+
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Edit">
+    <p><input type="hidden" asp-for="Id"></p>
+    <p>
+        <label asp-for="Name">Your Name:</label>
+        <input asp-for="Name" />
+    </p>
+    <p><button type="submit">Submit</button></p>
+</form>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

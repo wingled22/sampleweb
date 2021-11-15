@@ -9,8 +9,8 @@ using sampleweb.Models;
 
 namespace sampleweb.Controllers
 {
-    [Route("[controller]")]
-    [Route("[controller]/[action]")]
+    // [Route("[controller]")]
+    // [Route("[controller]/[action]")]
     public class DemoController : Controller
     {
         private  readonly shapiContext _context;
